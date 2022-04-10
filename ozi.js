@@ -72,12 +72,12 @@ client
   });
 
 setInterval(() => {
-  let GuildID = "899273632436592701"
-  let OneMonth = "901908110619340820"
-  let ThreeMonth = "901907879999701012"
-  let SixMonth = "901907876631699507"
-  let NineMonth = "901907873662119986"
-  let OneYear = "901907864040382504"
+  let GuildID = "930207527449268255"
+  let OneMonth = "961375991081603152"
+  let ThreeMonth = "961376084140650558"
+  let SixMonth = "961376177270960138"
+  let NineMonth = "961376269029761035"
+  let OneYear = "961376380052963430"
   const server = client.guilds.cache.get(GuildID); 
   server.members.cache.forEach(async member => {
 if(Date.now() - member.joinedAt > 1000 * 60 * 60 * 24 * 30) {await member.roles.add(OneMonth)}
@@ -107,7 +107,7 @@ client.on("message", async (msg) => {
       const kelime = ["discord.gg", "discord.me", "discordapp.com", "discord.io", "discord.tk"];
       if (kelime.some(reklam => msg.content.includes(reklam))) {
         if (msg.member.permissions.has(8)) return
-        msg.channel.send(`Hey ${msg.author}, sunucuda link paylaşamazsın!`).then(ozixd => ozixd.delete({ timeout: 3000 }));
+        msg.channel.send(`Hey ${msg.author}, sunucuda link paylaşamazsın!`);
         if (msg.deletable) msg.delete({
           timeout: 200
         }).catch(err => {});
@@ -118,7 +118,7 @@ client.on("message", async (msg) => {
         if (msg.deletable) msg.delete({
           timeout: 200
         }).catch(err => {});
-        msg.channel.send(`Hey ${msg.author}, sunucuda link paylaşamazsın!`).then(ozixd => ozixd.delete({ timeout: 3000 }));
+        msg.channel.send(`Hey ${msg.author}, sunucuda link paylaşamazsın!`);
       }
     } catch (err) {}
 
@@ -133,7 +133,7 @@ client.on("messageUpdate", async (oldMsg, newMsg) => {
       if (newMsg.member.permissions.has(8)) return
       const kelime = ["discord.gg", "discord.me", "discordapp.com", "discord.io", "discord.tk"];
       if (kelime.some(reklam => newMsg.content.includes(reklam))) {
-        newMsg.channel.send(`Hey ${newMsg.author}, sunucuda link paylaşamazsın!`).then(ozixd => ozixd.delete({ timeout: 3000 }));
+        newMsg.channel.send(`Hey ${newMsg.author}, sunucuda link paylaşamazsın!`);
         if (newMsg.deletable) newMsg.delete({
           timeout: 200
         }).catch(err => {});
@@ -143,7 +143,7 @@ client.on("messageUpdate", async (oldMsg, newMsg) => {
         if (newMsg.deletable) newMsg.delete({
           timeout: 200
         }).catch(err => {});
-        newMsg.channel.send(`Hey ${newMsg.author}, sunucuda link paylaşamazsın!`).then(ozixd => ozixd.delete({ timeout: 3000 }));
+        newMsg.channel.send(`Hey ${newMsg.author}, sunucuda link paylaşamazsın!`);
       }
     } catch (err) {}
 
@@ -179,11 +179,11 @@ client.on('message', async message => {
           let filtered = messages.filter((x) => x.author.id === message.author.id).array().splice(0, 7);
           message.channel.bulkDelete(filtered);
                 message.member.roles.add(conf.chatMute);
-                message.channel.send(`${Mute2} Sohbet kanallarını kirletme sebebiyle \`3 dakika\` süresince susturuldunuz, mesajlar temizlendi. Lütfen yavaşlayın. ${message.author}`).then(ozixd => ozixd.delete({ timeout: 5000 }))
+                message.channel.send(`${Mute2} Sohbet kanallarını kirletme sebebiyle \`3 dakika\` süresince susturuldunuz, mesajlar temizlendi. Lütfen yavaşlayın. ${message.author}`)
 
                 setTimeout(() => {
                     message.member.roles.remove(conf.chatMute);
-                    message.channel.send(`${Unmute} Sohbet kanallarını kirletme sebebiyle 3 dakika süresince susturmanız bitti. Lütfen tekrarlamayınız. ${message.author}`).then(ozixd => ozixd.delete({ timeout: 5000 }))
+                    message.channel.send(`${Unmute} Sohbet kanallarını kirletme sebebiyle 3 dakika süresince susturmanız bitti. Lütfen tekrarlamayınız. ${message.author}`)
                 }, 180000);//9000000
             } else {
                 userData.msgCount = msgCount;
