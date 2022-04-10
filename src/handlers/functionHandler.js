@@ -47,7 +47,7 @@ module.exports = function (client) {
     const embed = new MessageEmbed()
       .setColor("RED")
       .setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true, size: 2048 }))
-      .setFooter("✬ Revulion Developed by OZİ", ozi.avatarURL({ dynamic: true }));
+      .setFooter("✸ ✩Wâo ✸❆ ⱠƗØ₦196✶#4691 was here!", ozi.avatarURL({ dynamic: true }));
     this.send(embed.setDescription(text)).then((x) => { if (x.deletable) x.delete({ timeout: 10000 }); });
   };
 
